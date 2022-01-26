@@ -1,0 +1,36 @@
+# Пользователь вводит месяц в виде целого числа от 1 до 12.
+# Сообщить к какому времени года относится месяц (зима, весна, лето, осень).
+# Напишите решения через list и через dict.
+
+# Решение через dict:
+new_dict = {1: "Зима", 2: "Зима", 3: "Весна",
+            4: "Весна", 5: "Весна", 6: "Лето", 7: "Лето",
+            8: "Лето", 9: "Осень", 10: "Осень",
+            11: "Осень", 12: "Зима"}
+
+month = input("Введите номер месяца >> ")
+
+if not month.isdigit() or int(month) > 12 or int(month) < 1:
+    print("Неверный формат числа")
+    exit()
+
+print(new_dict.get(int(month)))
+
+# Решение через list:
+
+list_month = ["Зима", "Весна", "Лето", "Осень"]
+
+month = input("Введите номер месяца >> ")
+
+if not month.isdigit() or int(month) > 12 or int(month) < 1:
+    print("Неверный формат числа")
+    exit()
+
+if int(month) <= 2 or int(month) == 12:
+    print(list_month[0])
+elif int(month) >= 3 and int(month) <= 5:
+    print(list_month[1])
+elif int(month) >= 6 and int(month) <= 8:
+    print(list_month[2])
+else:
+    print(list_month[3])
